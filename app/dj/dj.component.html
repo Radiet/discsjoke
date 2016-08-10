@@ -1,0 +1,21 @@
+<div *ngIf="!Channel">
+  <h1>Please wait.. </h1>
+  <hr>
+
+  <div class="row">
+    <div class="col-md-7">
+      <dj-playlist [playlist]="[{'title': 'Getting data..'}]"></dj-playlist>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="Channel">
+  <h1>Channel {{Channel.name}} ({{Channel.videos.length}})</h1>
+  <hr>
+
+  <div class="row">
+    <div class="col-md-7">
+      <dj-playlist [playlist]="Channel.videos"></dj-playlist>
+    </div>
+  </div>
+</div>
